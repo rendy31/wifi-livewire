@@ -33,6 +33,12 @@
                                 <div>
                                     @error('nama') <span class="error">{{ $message }}</span> @enderror 
                                 </div>
+                                
+                                <label class="form-label">Tgl Lahir</label>
+                                <input type="date" class="form-control" wire:model="tglLahir">
+                                <div>
+                                    @error('tglLahir') <span class="error">{{ $message }}</span> @enderror 
+                                </div>
 
                                 <label class="form-label">Password</label>
                                 <input type="password" class="form-control" wire:model="password">
@@ -41,10 +47,11 @@
                                 </div>
 
                                 <label class="form-label">Lokasi</label>
-                                <select wire:model="lokasi" class="form-select">
+                                <select wire:model="locate_id" class="form-select">
                                     <option selected>:. Pilih Lokasi Wifi .:</option>
-                                    <option value="Asrama Putra">Asrama Putra</option>
-                                    <option value="Asrama Putri">Asrama Putri</option>
+                                    @foreach ($locates as $item)
+                                    <option value="{{$item->id}}">{{$item->nama}}</option>
+                                    @endforeach
                                 </select>
                              
                              

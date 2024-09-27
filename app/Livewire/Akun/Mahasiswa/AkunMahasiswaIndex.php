@@ -10,10 +10,18 @@ use Livewire\Attributes\Layout;
 class AkunMahasiswaIndex extends Component
 {
     use WithPagination;
+
+    public function delete($id)
+    {
+        AkunMahasiswa::find($id)->delete();
+        session()->flash('status', 'Successfully Deleted.');
+    }
+
+
     #[Layout('layouts.app')] 
     public function render()
     {
-        $akunMahasiswas = AkunMahasiswa::latest()->paginate(2);
+        $akunMahasiswas = AkunMahasiswa::latest()->paginate(25);
         return view('livewire.akun.mahasiswa.akun-mahasiswa-index', compact('akunMahasiswas'));
     }
 }
