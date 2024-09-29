@@ -7,8 +7,11 @@ use App\Livewire\Lokasi\LokasiIndex;
 use Illuminate\Support\Facades\Auth;
 use App\Livewire\Lokasi\LokasiCreate;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Category\CategoryEdit;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoController;
+use App\Livewire\Category\CategoryIndex;
+use App\Livewire\Category\CategoryCreate;
 use App\Livewire\Akun\Mahasiswa\AkunMahasiswaEdit;
 use App\Livewire\Akun\Mahasiswa\AkunMahasiswaIndex;
 use App\Livewire\Akun\Mahasiswa\AkunMahasiswaCreate;
@@ -44,8 +47,11 @@ Route::prefix('akun')->group(function () {
     
     Route::get('/mahasiswa/import', AkunMahasiswaImport::class)->name('mahasiswa.import');
     Route::get('/mahasiswa/import/format', [AkunMahasiswaImport::class, 'download'])->name('format.import');
-    // Route::post('import', 'import')->name('import');
-    // Route::get('export', 'export')->name('export');
+    
+    Route::get('/category', CategoryIndex::class)->name('category.index');
+    Route::get('/category/create', CategoryCreate::class)->name('category.create');
+    Route::get('/category/edit/{id}', CategoryEdit::class)->name('category.edit');
+
 })->middleware('auth');
 
 Route::prefix('wifi')->group(function () {

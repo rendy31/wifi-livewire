@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Components / Accordion - NiceAdmin Bootstrap Template</title>
+    <title>Wifi Management</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -223,18 +223,18 @@
 
 
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('mahasiswa.*') ? "" : "collapsed" }}" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                <a class="nav-link {{ request()->routeIs('mahasiswa.*') ||request()->routeIs('category.*') ? "" : "collapsed" }}" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-layout-text-window-reverse"></i><span>Akun</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="tables-nav" class="nav-content collapse {{ request()->routeIs('mahasiswa.*') ? "show" : "" }}" data-bs-parent="#sidebar-nav">
+                <ul id="tables-nav" class="nav-content collapse {{ request()->routeIs('mahasiswa.*') ||request()->routeIs('category.*') ? "show" : "" }}" data-bs-parent="#sidebar-nav">
                     <li>
                         <a wire:navigate href="{{ route('mahasiswa.index') }}" class="{{ request()->routeIs('mahasiswa.*') ? "active" : "" }}">
                             <i class="bi bi-circle"></i><span>Mahasiswa</span>
                         </a>
                     </li>
                     <li>
-                        <a wire:navigate href="" class="">
+                        <a wire:navigate href="{{route('category.index')}}" class="{{ request()->routeIs('category.*') ? "active" : "" }}">
                             <i class="bi bi-circle"></i><span>Kategori</span>
                         </a>
                     </li>
