@@ -1,17 +1,18 @@
 <?php
 
 use App\Livewire\Home;
+use App\Models\locate;
+use App\Livewire\Lokasi\LokasiEdit;
+use App\Livewire\Lokasi\LokasiIndex;
 use Illuminate\Support\Facades\Auth;
+use App\Livewire\Lokasi\LokasiCreate;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoController;
 use App\Livewire\Akun\Mahasiswa\AkunMahasiswaEdit;
 use App\Livewire\Akun\Mahasiswa\AkunMahasiswaIndex;
 use App\Livewire\Akun\Mahasiswa\AkunMahasiswaCreate;
 use App\Livewire\Akun\Mahasiswa\AkunMahasiswaImport;
-use App\Livewire\Lokasi\LokasiCreate;
-use App\Livewire\Lokasi\LokasiEdit;
-use App\Livewire\Lokasi\LokasiIndex;
-use App\Models\locate;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,7 @@ Route::prefix('akun')->group(function () {
     Route::get('/mahasiswa/edit/{id}', AkunMahasiswaEdit::class)->name('mahasiswa.edit');
     
     Route::get('/mahasiswa/import', AkunMahasiswaImport::class)->name('mahasiswa.import');
+    Route::get('/mahasiswa/import/format', [AkunMahasiswaImport::class, 'download'])->name('format.import');
     // Route::post('import', 'import')->name('import');
     // Route::get('export', 'export')->name('export');
 })->middleware('auth');

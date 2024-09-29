@@ -19,5 +19,9 @@ class DatabaseSeeder extends Seeder
             'email' => 'bapsi@gmail.com',
             'password' => BCRYPT('bapsisuakainsan'),
         ]);
+
+        $this->call([
+            LocationSeeder::class,
+        ]);
     }
 }

@@ -47,23 +47,23 @@
                                         </div>
                                     </div>
                                 </form>
-                            </div>
-                            <div class="alert alert-success mt-3" role="alert">
-                                <h4 class="alert-heading">Format Import</h4>
-                                <p>
-                                    <ol>
-                                        <li>Data yang diimport untuk akun wifi mahasiswa</li>
-                                        <li>format file wajib .xlsx</li>
-                                        <li>Urutan kolom data sbb : NIM - Nama - Tanggal Lahir - Password - Lokasi_ID</li>
-                                        <li>Tanggal Lahir ditulis dengan format YYYY-MM-DD, contoh : 2006-07-10, dan format kolom Tanggal Lahir pastikan TEXT</li>
-                                        <li>Lokasi ID diisi dengan angka yang merupakan ID dari Lokasi Akun Wifi Mahasiswa tersebut, bisa dilihat di menu LOKASI</li>
-                                        <li>Langsung buat datanya saja, tidak bisa pakai header</li>
-                                    </ol>
-                                </p>
-                                <hr>
-                                <p class="mb-0">
-                                    <a href="" class="btn btn-primary btn-sm">Download Template</a>
-                                </p>
+                                <div class="alert alert-success mt-3" role="alert">
+                                    <h4 class="alert-heading">Format Import</h4>
+                                    <p>
+                                        <ol>
+                                            <li>Data yang diimport untuk akun wifi mahasiswa</li>
+                                            <li>format file wajib .xlsx</li>
+                                            <li>Urutan kolom data sbb : NIM - Nama - Tanggal Lahir - Password - Lokasi_ID</li>
+                                            <li>Tanggal Lahir ditulis dengan format YYYY-MM-DD, contoh : 2006-07-10, dan format kolom Tanggal Lahir pastikan TEXT</li>
+                                            <li>Lokasi ID diisi dengan angka yang merupakan ID dari Lokasi Akun Wifi Mahasiswa tersebut, bisa dilihat di menu LOKASI</li>
+                                            <li>Langsung buat datanya saja, tidak bisa pakai header</li>
+                                        </ol>
+                                    </p>
+                                    <hr>
+                                    <p class="mb-0">
+                                        <a href="{{route('format.import')}}" class="btn btn-primary btn-sm">Download Template</a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
