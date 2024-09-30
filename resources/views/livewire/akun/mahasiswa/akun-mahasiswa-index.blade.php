@@ -41,6 +41,7 @@
                             <table class="table table-hover ">
                                 <thead>
                                     <tr>
+                                        <th>No</th>
                                         <th>NIM</th>
                                         <th>Nama</th>
                                         <th>Tgl Lahir</th>
@@ -51,6 +52,7 @@
                                 <tbody>
                                     @foreach ($akunMahasiswas as $item)
                                         <tr>
+                                            <td>{{ $loop->iteration }}</td>
                                             <td>{{ $item->nim }}</td>
                                             <td>{{ $item->nama }}</td>
                                             <td>{{ \Carbon\Carbon::parse($item->tglLahir)->locale('id')->translatedFormat('d F Y') }}</td>
@@ -76,7 +78,7 @@
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->
-                            {{ $akunMahasiswas->links() }}
+                            {{-- {{ $akunMahasiswas->links() }} --}}
                         </div>
                     </div>
 

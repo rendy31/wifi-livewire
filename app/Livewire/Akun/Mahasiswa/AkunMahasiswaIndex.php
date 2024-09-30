@@ -21,7 +21,8 @@ class AkunMahasiswaIndex extends Component
     #[Layout('layouts.app')] 
     public function render()
     {
-        $akunMahasiswas = AkunMahasiswa::latest()->paginate(25);
+        // $akunMahasiswas = AkunMahasiswa::latest()->paginate(25);
+        $akunMahasiswas = AkunMahasiswa::all();
         return view('livewire.akun.mahasiswa.akun-mahasiswa-index', compact('akunMahasiswas'));
     }
 }
